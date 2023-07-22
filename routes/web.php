@@ -1,7 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\customAutController;
 
+Route::get('dashboard', [CustomAutController::class, 'dashboard']);
+Route::get('login', [CustomAutController::class, 'index'])->name('login');
+Route::get('custom-login', [CustomAutController::class, 'customLogin'])->name('login.custom');
+Route::get('registration', [CustomAutController::class, 'registration'])->name('register-user');
+Route::get('custom-registration', [CustomAutController::class, 'customRegistration'])->name('register.custom');
+Route::get('singnout', [CustomAutController::class, 'signOut'])->name('singnout');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
