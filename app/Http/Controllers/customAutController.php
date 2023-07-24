@@ -40,7 +40,7 @@ class customAutController extends Controller
         $request->validate([
             'name'=> 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|main:6',
+            'password' => 'required|min:6',
         ]);
 
         $data = $request->all();

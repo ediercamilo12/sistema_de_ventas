@@ -7,7 +7,7 @@
                     <div class="card">
                         <h3 class="card-header text-center"> Iniciar Secion</h3>
                         <div class="card-body">
-                            <form method="post" action="{{  route('login.custom') }}">
+                            <form method="GET" action="{{  route('login.custom') }}">
                                 @csrf
                                 <div class="from-group mb-3">
                                     <input type="text" placeholder="email" id="email" class="form-control" name="email" required
@@ -18,7 +18,17 @@
                                 </div>
                                 <div class="from-group mb-3">
                                     <input type="password" placeholder="Password" class="form-control" name="password" required>
-                                    @if($errors->has()) @endif
+                                    @if($errors->has('password'))
+                                        <span class="text-danger">{{  $errors->first('password') }}</span>
+                                    @endif
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label>
+                                        <input type="checkbox" name="remember"> reduerdame
+                                    </label>
+                                </div>
+                                <div class="d-grid mx-auto">
+                                    <button type="submit" class="btn btn-dark btn-block">Iniciar Sesion </button>
                                 </div>
                             </form>
                         </div>
@@ -27,3 +37,4 @@
             </div>
         </div>
     </main>
+
