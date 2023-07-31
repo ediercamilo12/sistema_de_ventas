@@ -20,11 +20,11 @@ class CategoryController extends Controller
 
     public function store(Request $request){
         $data = $request->validate([
-            'name' => 'required| max:255',
+            'name' => 'required|max:255',
             'description' => 'required|max:255'
         ]);
 
-        Category::crete($data);
+        Category::create($data);
 
         return back()->with('message', 'category created successfully');
     }
@@ -42,7 +42,7 @@ class CategoryController extends Controller
         ]);
         $category->update($data);
 
-        return back()->with('message', 'Category update.');
+        return back()->with('message', 'Category updated.');
     }
 
     public function destroy(Category $category)

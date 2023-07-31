@@ -1,5 +1,5 @@
 <div style="margin-bottom: 1em;">
-    <a href="{{  route('products.index') }}">Category List</a>
+    <a href="{{  route('products.index') }}">Product List</a>
 </div>
 
 <h1>Create products</h1>

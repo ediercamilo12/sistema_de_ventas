@@ -25,7 +25,7 @@
             <td>
                 <a href="{{  route('products.edit', $product) }}">Edit</a>
 
-                <form action="{{  route('products.delete', $products) }}">
+                <form action="{{  route('products.delete', $products) }}" method="post">
                     @csrf
                     <button type="submit">Delete</button>
                 </form>

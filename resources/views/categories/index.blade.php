@@ -20,6 +20,7 @@
         <tr>
             <td>{{  $categories->firstItem() + $key }}.</td>
             <td>{{  $category->name }}</td>
+            <td>{{  $category->description }}</td>
             <td>{{  $category->created_at->format('F d, Y') }}</td>
             <td>
                 <a href="{{  route('categories.edit', $category) }}">Edit</a>

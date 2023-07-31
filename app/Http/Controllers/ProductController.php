@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\product;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -17,7 +17,7 @@ class ProductController extends Controller
 
     public function create()
     {
-        $categories= Category::orderby('name')->get();
+        $categories= Category::orderBy('name')->get();
         return view('products.create', compact('categories'));
     }
 
@@ -50,9 +50,9 @@ class ProductController extends Controller
         return back()-> with('message', 'product updated');
     }
 
-    public function destroy(Category $category)
+    public function destroy(Product $product)
     {
-        $category->delete();
+        $product->delete();
         return back()->with('message', 'product deleted.');
     }
 }

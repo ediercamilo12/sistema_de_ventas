@@ -8,37 +8,38 @@ use App\http\controllers\ProductController;
 
 Route::get('dashboard', [CustomAutController::class, 'dashboard']);
 Route::get('login', [CustomAutController::class, 'index'])->name('login');
-Route::get('custom-login', [CustomAutController::class, 'customLogin'])->name('login.custom');
+Route::post('custom-login', [CustomAutController::class, 'customLogin'])->name('login.custom');
 Route::get('registration', [CustomAutController::class, 'registration'])->name('register-user');
-Route::get('custom-registration', [CustomAutController::class, 'customRegistration'])->name('register.custom');
+Route::post('custom-registration', [CustomAutController::class, 'customRegistration'])->name('register.custom');
 Route::get('singnout', [CustomAutController::class, 'signOut'])->name('singnout');
 
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 
 Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
 
+Route::post('/categories/create', [CategoryController::class, 'store'])->name('categories.store');
 
-Route::get('/categories/creates', [CategoryController::class, 'store'])->name('categories.store');
+Route::get('/categories/edit/{category}', [CategoryController::class, 'edit'])->name('categories.edit');
 
-Route::get('/categories/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+Route::post('/categories/edit/{category}', [CategoryController::class, 'update'])->name('categories.update');
+
+Route::post('/categories/delete/{category}', [CategoryController::class, 'destroy'])->name('categories.delete');
 
 
-Route::get('/categories/update', [CategoryController::class, 'update'])->name('categories.update');
 
-Route::get('/categories/destroy', [CategoryController::class, 'destroy'])->name('categories.destroy');
 
-Route::get('/products/index', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
 
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
 
-Route::get('/products/store', [ProductController::class, 'store'])->name('products.store');
+Route::post('/products/create', [ProductController::class, 'store'])->name('products.store');
 
-Route::get('/products/edit', [ProductController::class, 'edit'])->name('products.edit');
+Route::get('/products/edit/{products}', [ProductController::class, 'edit'])->name('products.edit');
 
-Route::get('/products/update', [ProductController::class, 'update'])->name('products.update');
+Route::post('/products/edit/{products}', [ProductController::class, 'update'])->name('products.update');
 
-Route::get('/products/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
+Route::post('/products/delete/{products}', [ProductController::class, 'destroy'])->name('products.destroy');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
