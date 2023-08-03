@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\customAutController;
 use App\http\controllers\CategoryController;
 use App\http\controllers\ProductController;
+use App\Http\Controllers\DepartamentoController;
 
 
 Route::get('dashboard', [CustomAutController::class, 'dashboard']);
@@ -30,7 +31,6 @@ Route::post('/categories/delete/{category}', [CategoryController::class, 'destro
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
-
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
 
 Route::post('/products/create', [ProductController::class, 'store'])->name('products.store');
@@ -39,7 +39,24 @@ Route::get('/products/edit/{products}', [ProductController::class, 'edit'])->nam
 
 Route::post('/products/edit/{products}', [ProductController::class, 'update'])->name('products.update');
 
-Route::post('/products/delete/{products}', [ProductController::class, 'destroy'])->name('products.destroy');
+Route::post('/products/delete/{products}', [ProductController::class, 'destroy'])->name('products.delete');
+
+
+
+Route::get('/departamento', [DepartamentoController::class, 'index'])->name('departamento.index');
+
+Route::get('/departamento/create', [DepartamentoController::class, 'create'])->name('departamento.create');
+
+Route::post('/departamento/create', [DepartamentoController::class, 'store'])->name('departamento.store');
+
+Route::get('/departamento/edit/{department}', [DepartamentoController::class, 'edit'])->name('departamento.edit');
+
+Route::post('/departamento/update/{department}', [DepartamentoController::class, 'update'])->name('departamento.update');
+
+Route::post('/departamento/delete/{department}', [DepartamentoController::class, 'destroy'])->name('departamento.delete');
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

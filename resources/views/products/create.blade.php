@@ -40,7 +40,7 @@
         </select>
         @error('category_id')
         <div style="color: red;">{{  $message }}</div>
-        @error()
+        @enderror()
     </div>
 
     <div>

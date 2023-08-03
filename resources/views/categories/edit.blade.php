@@ -16,6 +16,8 @@
         @error('name')
         <div style="color: red;">{{  $message }}</div>
         @enderror
+
+
     </div>
     <div style="margin-bottom: 1em;">
         <label for="name">Description </label>

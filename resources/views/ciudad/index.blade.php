@@ -1,5 +1,5 @@
 <div><a href="/">Home</a></div>
-<a href="{{  route('products.create') }}">New Product</a>
+<a href="{{  route('cuidad.create') }}">New city</a>
 
 @if(session('message'))
     <div style="color: green;">{{  session('message') }}</div>
@@ -10,22 +10,21 @@
     <tr>
         <td> No.</td>
         <td>Name</td>
-        <td>Price</td>
-        <td>Category</td>
+        <td>departamento</td>
+        <td>Timestamp</td>
         <td>Action</td>
     </tr>
     </thead>
     <tbody>
-    @forelse($products as $key => $product)
+    @forelse($cuidad as $key => $city)
         <tr>
-            <td>{{  $products->firstItem() + $key }}.</td>
-            <td>{{  $product->name }}</td>
-            <td>{{  $product->price }}</td>
-            <td>{{  $product->category->name }}</td>
+            <td>{{  $cuidad->firstItem() + $key }}.</td>
+            <td>{{  $city->name }}</td>
+            <td>{{  $city->created_at->format('F d, Y') }}</td>
             <td>
-                <a href="{{  route('products.edit', $product) }}">Edit</a>
+                <a href="{{  route('$cuidad.edit', $city) }}">Edit</a>
 
-                <form action="{{  route('products.delete', $product) }}" method="post">
+                <form action="{{  route('$cuidad.delete', $city) }}" method="post">
                     @csrf
                     <button type="submit">Delete</button>
                 </form>
