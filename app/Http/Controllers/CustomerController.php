@@ -10,14 +10,14 @@ class CustomerController extends Controller
 {
     public function index()
     {
-        return view('customers.index',[
-            'customer' => Customer::paginate()
+        return view('customer.index',[
+            'customers' => Customer::paginate()
         ]);
     }
     public function create()
     {
         $cities= City::orderBy('name')->get();
-        return view('customers.create', compact('cities'));
+        return view('customer.create', compact('cities'));
     }
 
     public function store(Request $request){
@@ -35,7 +35,7 @@ class CustomerController extends Controller
     public function edit(Customer $customers)
     {
         $cities= City::orderBy('name')->get();
-        return view('customers.create', compact('cities'));
+        return view('customer.create', compact('cities'));
     }
 
     public function update(Customer $customers, Request $request)

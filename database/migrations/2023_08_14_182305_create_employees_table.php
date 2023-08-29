@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('lastname');
             $table->char('identification_card');
-            $table->foreignId('cities_id')->constrained()->onDelete('cascade');
+            $table->foreignId('city_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

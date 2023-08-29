@@ -21,7 +21,6 @@ Route::get('singnout', [CustomAutController::class, 'signOut'])->name('singnout'
 
 
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
-
 Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
 Route::post('/categories/create', [CategoryController::class, 'store'])->name('categories.store');
 Route::get('/categories/edit/{category}', [CategoryController::class, 'edit'])->name('categories.edit');
